@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin|Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <div class="container-fluid news-tab">
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/">Tech News</a>
+        <a href="/science">Science</a>
+        <a href="/business">Business</a>
+        <a href="/sports">Sports</a>
+        <a href="/general">General</a>
+      </div>
+
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ News</button>
+      </div>
+
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+      <div class="header">
+        <h1>LATEST NEWS(Using APIs)</h1>
+      </div>
+      <div class="articles">
+        <h3 id="type-of-news"><%=type%> News</h3>
+        <%newsArticles.forEach(function(article){%>
+      <a id="news-url"href=<%=article.url%>  >➤<%=article.title%>....</a><br><br>
+    <%});%>
+      </div>
+      <br><br><br><br><br>
+
+        <p id="footer">© Brought to you by Rajat Upadhyay</p>
+        <p id="footer">-------- Powered by News API --------</p>
+
+
+    </div>
+
+  </body>
+</html>
