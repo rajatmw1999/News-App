@@ -36,6 +36,6 @@ app.use(express.static('public'));
       res.render('home',{newsArticles:newsResult, type:cate});
   });});
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
   console.log("Server is running on port 3000");
 })
