@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static('public'));
   app.get('/',function(req,res){
-    res.send('data');
+    return res.send('data');
     var newsUrl = "https://newsapi.org/v2/top-headlines?apiKey=b78b7228021b496ba9eecf66e070ad57&sources=techcrunch";
     var newsResult;
 
